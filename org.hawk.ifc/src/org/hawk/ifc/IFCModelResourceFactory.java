@@ -52,9 +52,9 @@ import org.eclipse.hawk.core.model.IHawkModelResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class IFCModelFactory implements IModelResourceFactory {
+public class IFCModelResourceFactory implements IModelResourceFactory {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(IFCModelFactory.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(IFCModelResourceFactory.class);
 
 	private static final class FileInputStreamFactory implements InputStreamFactory {
 		private File file;

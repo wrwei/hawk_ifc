@@ -51,15 +51,15 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.hawk.core.model.IHawkModelResource;
 import org.eclipse.hawk.core.model.IHawkObject;
-import org.hawk.ifc.IFCModelFactory.IFCModelType;
+import org.hawk.ifc.IFCModelResourceFactory.IFCModelType;
 
 public abstract class IFCAbstractModelResource implements IHawkModelResource {
 
-	private final IFCModelFactory factory;
+	private final IFCModelResourceFactory factory;
 	private final IFCModelType ifcModelType;
 	private Set<IHawkObject> allElements;
 
-	public IFCAbstractModelResource(IFCModelFactory p, IFCModelType type) {
+	public IFCAbstractModelResource(IFCModelResourceFactory p, IFCModelType type) {
 		this.factory = p;
 		this.ifcModelType = type;
 	}

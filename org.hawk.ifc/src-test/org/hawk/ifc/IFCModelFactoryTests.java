@@ -30,8 +30,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
+import org.eclipse.epsilon.eol.EolModule;
+import org.eclipse.epsilon.eol.exceptions.EolRuntimeException;
+import org.eclipse.epsilon.eol.models.IModel;
+import org.eclipse.hawk.core.model.IHawkModelResource;
 import org.eclipse.hawk.core.model.IHawkObject;
-import org.hawk.ifc.IFCModelFactory.IFCModelType;
+import org.hawk.ifc.IFCModelResourceFactory.IFCModelType;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -52,11 +56,11 @@ public class IFCModelFactoryTests {
 	@Parameterized.Parameter(1)
 	public IFCModelType expectedType;
 
-	private IFCModelFactory factory;
+	private IFCModelResourceFactory factory;
 
 	@Before
 	public void setup() {
-		factory = new IFCModelFactory();
+		factory = new IFCModelResourceFactory();
 	}
 
 	@Parameterized.Parameters
@@ -118,7 +122,28 @@ public class IFCModelFactoryTests {
 		final File f = filePath.toFile();
 		if (factory.canParse(f)) {
 			final Set<IHawkObject> contents = factory.parse(null, f).getAllContentsSet();
+			IHawkModelResource resource = factory.parse(null, f);
+//			runStringEOLQuery(resource, "1.println();");
+			System.out.println(contents.size());
 			assertFalse("The model contents should not be empty for " + f.getName(), contents.isEmpty());
 		}
+	}
+	
+	public static String runStringEOLQuery(IModel model, String query) throws Exception {
+		Object result = null;
+		EolModule eolModule = new EolModule();
+		eolModule.getContext().getModelRepository().addModel(model);
+		try {
+			eolModule.parse(query);
+		} catch (Exception e) {
+			throw new IllegalStateException("Pattern expression cannot be parsed.", e);
+		}
+
+		try {
+			result = eolModule.execute();
+		} catch (EolRuntimeException e) {
+			throw new IllegalStateException(String.format("The query <%s> could not be evaluated.", query), e);
+		}
+		return "";
 	}
 }

@@ -1,0 +1,12 @@
+<hawkProperties>
+  <dbType>org.eclipse.hawk.greycat.LevelDBGreycatDatabase</dbType>
+  <monitoredVCS class="set">
+    <string-array>
+      <string>file:///C:/Users/willr/Git/hawk_ifc/org.hawk.ifc/index/models/</string>
+      <string>org.eclipse.hawk.localfolder.LocalFolder</string>
+      <string>false</string>
+    </string-array>
+  </monitoredVCS>
+  <minDelay>0</minDelay>
+  <maxDelay>0</maxDelay>
+</hawkProperties>

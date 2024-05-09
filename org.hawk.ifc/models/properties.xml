@@ -1,0 +1,6 @@
+<hawkProperties>
+  <dbType>org.eclipse.hawk.greycat.LevelDBGreycatDatabase</dbType>
+  <monitoredVCS class="set"/>
+  <minDelay>5000</minDelay>
+  <maxDelay>512000</maxDelay>
+</hawkProperties>

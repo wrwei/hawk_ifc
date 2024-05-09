@@ -25,13 +25,13 @@ import java.io.File;
 import org.bimserver.emf.IfcModelInterface;
 import org.bimserver.plugins.deserializers.DeserializeException;
 import org.bimserver.plugins.deserializers.Deserializer;
-import org.hawk.ifc.IFCModelFactory.IFCModelType;
+import org.hawk.ifc.IFCModelResourceFactory.IFCModelType;
 
 public class IFCModelResource extends IFCAbstractModelResource {
 
 	protected File ifc;
 
-	public IFCModelResource(File f, IFCModelFactory p, IFCModelType type) {
+	public IFCModelResource(File f, IFCModelResourceFactory p, IFCModelType type) {
 		super(p, type);
 		ifc = f;
 	}

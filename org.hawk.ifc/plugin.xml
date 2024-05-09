@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.hawk.core.ModelExtensionPoint">
        <ModelP
-            ModelParser="org.hawk.ifc.IFCModelFactory">
+            ModelParser="org.hawk.ifc.IFCModelResourceFactory">
       </ModelP>
    </extension>
    <extension

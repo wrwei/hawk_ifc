@@ -27,7 +27,7 @@ import java.util.zip.ZipFile;
 import org.bimserver.emf.IfcModelInterface;
 import org.bimserver.plugins.deserializers.DeserializeException;
 import org.bimserver.plugins.deserializers.Deserializer;
-import org.hawk.ifc.IFCModelFactory.IFCModelType;
+import org.hawk.ifc.IFCModelResourceFactory.IFCModelType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -38,7 +38,7 @@ public class IFCZippedModelResource extends IFCAbstractModelResource {
 	private ZipFile zipFile;
 	private List<ZipEntry> ifcEntries;
 
-	public IFCZippedModelResource(ZipFile zf, List<ZipEntry> ifcEntries, IFCModelFactory ifcModelFactory,
+	public IFCZippedModelResource(ZipFile zf, List<ZipEntry> ifcEntries, IFCModelResourceFactory ifcModelFactory,
 			IFCModelType type) {
 		super(ifcModelFactory, type);
 		this.zipFile = zf;

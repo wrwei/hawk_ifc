@@ -143,7 +143,7 @@ public class IFCMetaModelResourceFactory implements IMetaModelResourceFactory {
 		set.add(new IFCMetaModelResource(EcorePackage.eINSTANCE.eResource(), this));
 		set.add(new IFCMetaModelResource(GeometryPackage.eINSTANCE.eResource(), this));
 		set.add(new IFCMetaModelResource(Ifc2x3tc1Package.eINSTANCE.eResource(), this));
-		set.add(new IFCMetaModelResource(Ifc4Package.eINSTANCE.eResource(), this));
+//		set.add(new IFCMetaModelResource(Ifc4Package.eINSTANCE.eResource(), this));
 		return set;
 	}
 
