@@ -7,7 +7,6 @@ Bundle-Vendor: University of York
 Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.7.0",
  org.eclipse.emf.ecore.xmi;bundle-version="2.7.0",
  org.eclipse.hawk.core;bundle-version="2.2.0",
- javax.activation;bundle-version="1.1.0",
  org.eclipse.epsilon.eol.engine;bundle-version="2.1.0",
  org.eclipse.epsilon.emc.emf;bundle-version="2.1.0",
  org.eclipse.hawk.emf;bundle-version="2.2.0",
@@ -19,10 +18,11 @@ Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.7.0",
  org.eclipse.hawk.graph;bundle-version="2.2.0",
  org.eclipse.hawk.localfolder;bundle-version="2.2.0",
  org.eclipse.hawk.workspace;bundle-version="2.2.0",
- org.eclipse.hawk.core.source;bundle-version="2.2.0",
  org.eclipse.hawk.greycat;bundle-version="2.2.0",
- org.eclipse.hawk.greycat.tests;bundle-version="2.2.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+ org.eclipse.hawk.greycat.tests;bundle-version="2.2.0",
+ org.eclipse.hawk.sqlite;bundle-version="2.3.0",
+ org.eclipse.hawk.sqlite.tests;bundle-version="2.3.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ClassPath: .,
  lib/bimserver-1.4.0-FINAL-2015-08-25-buildingSMARTLibrary.jar,
  lib/bimserver-1.4.0-FINAL-2015-08-25-ifcplugins.jar,

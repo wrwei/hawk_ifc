@@ -15,8 +15,8 @@ import org.eclipse.hawk.core.util.DefaultConsole;
 import org.eclipse.hawk.epsilon.emc.EOLQueryEngine;
 import org.eclipse.hawk.graph.updater.GraphMetaModelUpdater;
 import org.eclipse.hawk.graph.updater.GraphModelUpdater;
-import org.eclipse.hawk.greycat.tests.LevelDBGreycatDatabaseFactory;
 import org.eclipse.hawk.localfolder.LocalFolder;
+import org.eclipse.hawk.sqlite.tests.SQLiteDatabaseFactory;
 import org.eclipse.hawk.workspace.Workspace;
 import org.hawk.ifc.mm.IFCMetaModelResourceFactory;
 
@@ -25,7 +25,8 @@ public class QueryTest {
 	public static void main(String[] args) throws Exception {
 		Path SAMPLES_FOLDER = Paths.get("index");
 //		IGraphDatabaseFactory dbFactory = new OrientDatabaseFactory();
-		IGraphDatabaseFactory dbFactory = new LevelDBGreycatDatabaseFactory();
+//		IGraphDatabaseFactory dbFactory = new LevelDBGreycatDatabaseFactory();
+		IGraphDatabaseFactory dbFactory = new SQLiteDatabaseFactory();
 		IGraphDatabase db = dbFactory.create();
 		
 		final File indexerFolder = SAMPLES_FOLDER.toFile();
@@ -54,7 +55,7 @@ public class QueryTest {
 		try {
 			indexer.init(0, 0);
 			final LocalFolder vcs = new LocalFolder();
-			final File localFolder = new File(indexerFolder, "models");
+			final File localFolder = new File(indexerFolder.getParentFile(), "models");
 			localFolder.mkdir();
 			vcs.init(localFolder.getCanonicalPath(), indexer);
 			vcs.run();
@@ -65,9 +66,10 @@ public class QueryTest {
 			String query = "\'Executing query:\'.errln(); \n"
 					+ "IfcPerson.all().println();";
 			while(indexer.getCompositeStateListener().getCurrentState() != HawkState.RUNNING) {
+				Thread.sleep(1000);
 				System.out.println(".");
 			}
-			System.out.println(queryEngine.query(indexer, query, Collections.singletonMap(EOLQueryEngine.PROPERTY_REPOSITORYCONTEXT, Workspace.REPOSITORY_URL)));
+			System.out.println(queryEngine.query(indexer, query, Collections.emptyMap()));
 			
 			
 		} catch (Exception e) {

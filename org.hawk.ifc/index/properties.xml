@@ -1,8 +1,8 @@
 <hawkProperties>
-  <dbType>org.eclipse.hawk.greycat.LevelDBGreycatDatabase</dbType>
+  <dbType>org.eclipse.hawk.sqlite.SQLiteDatabase</dbType>
   <monitoredVCS class="set">
     <string-array>
-      <string>file:///C:/Users/willr/Git/hawk_ifc/org.hawk.ifc/index/models/</string>
+      <string>file:///home/agd516/Documents/hawk_ifc/org.hawk.ifc/models/</string>
       <string>org.eclipse.hawk.localfolder.LocalFolder</string>
       <string>false</string>
     </string-array>
